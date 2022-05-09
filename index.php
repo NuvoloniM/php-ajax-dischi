@@ -1,7 +1,7 @@
-<?php
+<!-- <?php
 
-include __DIR__ . '/API/dischi.php';
-?>
+// include __DIR__ . '/API/dischi.php';
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,9 +18,11 @@ include __DIR__ . '/API/dischi.php';
             <img src="./asset/img/logo-small.svg" alt="Spotify Logo" class="logo">
         </div>
     </header>
+<!--  milestone 1:
     <main class="overflow-auto">
         <div class="container">
             <div class="row row-cols-5 py-5 gx-5">
+
             <?php
                 foreach($database as $dischi) {
                     echo "<div class='px-4 my-3'>
@@ -35,13 +37,34 @@ include __DIR__ . '/API/dischi.php';
                         </div>";
                 };
             ?>
-            </div>
-        </div>
+-->
+<!-- Milestone 2: -->
+    <div id="app">
+                <main class="overflow-auto">
+                    <div class="container">
+                        <div class="row row-cols-5 py-5 gx-5">
+                            <div class="px-4 my-3" v-for="element in discArray">
+                                <div class="card h-100">
+                                    <img :src="`${element.poster}`" class="img-fluid p-3" :alt="`${element.title}`">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title"> {{element.title}}</h5>
+                                        <p class="card-text"> {{element.author}}</p>
+                                        <p class="card-text"> {{element.year}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+    </div>
+            <!-- </div>
+        </div> -->
     </main>
     
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="./asset/app.js"></script>
 
 </body>
 </html>
