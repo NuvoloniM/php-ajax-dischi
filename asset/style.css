@@ -1,0 +1,27 @@
+header {
+    height: 50px;
+    background-color: #2e3a46;
+}
+
+.logo {
+    height: 50px;
+    padding: 10px;
+    filter: invert(54%) sepia(69%) saturate(517%) hue-rotate(89deg) brightness(107%) contrast(95%);
+}
+
+main {
+    background-color: #1e2d3b;
+    height: calc(100vh - 50px);
+}
+
+.card {
+    background-color: #2e3a46;
+}
+
+.card-title {
+    color: #fff;
+}
+
+p {
+    color: #47586a;
+}
