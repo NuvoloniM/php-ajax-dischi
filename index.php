@@ -13,11 +13,18 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <div>
-            <img src="./asset/img/logo-small.svg" alt="Spotify Logo" class="logo">
-        </div>
-    </header>
+    <div id="app">
+        <header class="d-flex align-items-center justify-content-between">
+            <div>
+                <img src="./asset/img/logo-small.svg" alt="Spotify Logo" class="logo">
+            </div>
+            <div>
+                <select class="form-select" aria-label="Default select example" v-model="selected">
+                    <option selected value=""> Open to select genre</option>
+                    <option v-for="element in discArray" :value="`${element.genre}`"> {{ element.genre }}</option>
+                </select>
+            </div>
+        </header>
 <!--  milestone 1:
     <main class="overflow-auto">
         <div class="container">
@@ -39,11 +46,10 @@
             ?>
 -->
 <!-- Milestone 2: -->
-    <div id="app">
                 <main class="overflow-auto">
                     <div class="container">
                         <div class="row row-cols-5 py-5 gx-5">
-                            <div class="px-4 my-3" v-for="element in discArray">
+                            <div class="px-4 my-3" v-for="element in filterMusic()">
                                 <div class="card h-100">
                                     <img :src="`${element.poster}`" class="img-fluid p-3" :alt="`${element.title}`">
                                     <div class="card-body text-center">
